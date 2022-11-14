@@ -6,7 +6,10 @@ public class Settings {
     private Settings() {
     }
 
-    public static Settings getInstance() {
+    /**
+     * 1. synchronized 사용
+     */
+    public static synchronized Settings getInstance() {
         if (instance == null) {
             instance = new Settings();
         }
