@@ -1,4 +1,4 @@
-package designpatterns.factorymethod.before;
+package designpatterns.factorymethod.step2;
 
 public class Ship {
     private String name;
