@@ -1,16 +1,22 @@
 package designpatterns.singleton;
 
+import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class App {
-    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         Settings settings = Settings.getInstance();
+        Settings settings1 = null;
 
-        //리플렉션 사용하기
-        Constructor<Settings> constructor = Settings.class.getDeclaredConstructor();
-        constructor.setAccessible(true);
-        Settings settings1 = constructor.newInstance();
+        //직렬화 & 역직렬화 사용하기
+        try (ObjectOutput out = new ObjectOutputStream(new FileOutputStream("settings.obj"))) {
+            out.writeObject(settings);
+        }
+
+        try (ObjectInput in = new ObjectInputStream(new FileInputStream("settings.obj"))) {
+            settings1 = (Settings) in.readObject();
+        }
 
         System.out.println(settings == settings1);
     }

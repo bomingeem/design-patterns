@@ -1,6 +1,9 @@
 package designpatterns.singleton;
 
-public class Settings {
+import java.io.Serializable;
+
+public class Settings implements Serializable {
+
     private Settings() {
     }
 
@@ -16,5 +19,10 @@ public class Settings {
      */
     public static Settings getInstance() {
         return SettingsHolder.INSTANCE;
+    }
+
+    //직렬화 대응 방안
+    protected Object readResolve() {
+        return getInstance();
     }
 }
