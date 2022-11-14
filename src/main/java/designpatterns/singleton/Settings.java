@@ -1,18 +1,16 @@
 package designpatterns.singleton;
 
 public class Settings {
-    private static Settings instance;
+    private static Settings INSTANCE = new Settings();
 
     private Settings() {
     }
 
     /**
      * 1. synchronized 사용
+     * 2. 이른 초기화(eager initialization) 사용
      */
-    public static synchronized Settings getInstance() {
-        if (instance == null) {
-            instance = new Settings();
-        }
-        return instance;
+    public static Settings getInstance() {
+        return INSTANCE;
     }
 }
