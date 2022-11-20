@@ -25,6 +25,8 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.1.1'
 	implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '1.2.0.RELEASE'
+	implementation group: 'org.springframework', name: 'spring-tx', version: '5.3.24'
 }
 
 tasks.named('test') {
