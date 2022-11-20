@@ -8,6 +8,7 @@ public class Client {
         EmailMessage emailMessage = new EmailMessage();
         emailMessage.setFrom("whiteship@whiteship.me");
         emailMessage.setTo("keesum@whiteship.me");
+        emailMessage.setCc("bomingeem");
         emailMessage.setSubject("Test Mail from Java Program");
         emailMessage.setText("message");
         emailSender.sendEmail(emailMessage);
