@@ -5,6 +5,7 @@ public class Light {
 
     public void on() {
         System.out.println("불을 켭니다.");
+        this.isOn = true;
     }
 
     public void off() {
