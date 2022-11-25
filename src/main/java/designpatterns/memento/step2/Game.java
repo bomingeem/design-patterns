@@ -1,6 +1,8 @@
 package designpatterns.memento.step2;
 
-public class Game {
+import java.io.Serializable;
+
+public class Game implements Serializable {
     private int redTeamScore;
     private int blueTeamScore;
 
