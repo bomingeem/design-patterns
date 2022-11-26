@@ -28,7 +28,7 @@ public class OnlineCourse {
     public void addStudent(Student student) {
         if (this.state == State.DRAFT || this.state == State.PUBLISHED) {
             this.students.add(student);
-        } else if (this.state == State.DRAFT && availableTo(student)) {
+        } else if (this.state == State.PRIVATE && availableTo(student)) {
             this.students.add(student);
         } else {
             throw new UnsupportedOperationException("학생을 해당 수업에 추가할 수 없습니다.");
