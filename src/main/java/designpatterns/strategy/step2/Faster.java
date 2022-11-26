@@ -1,5 +1,8 @@
 package designpatterns.strategy.step2;
 
+/**
+ * ConcreteStrategy
+ */
 public class Faster implements Speed {
     @Override
     public void blueLight() {
