@@ -3,6 +3,9 @@ package designpatterns.state.step2;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Context
+ */
 public class OnlineCourse {
     private State state = new Draft(this);
     private List<Student> students = new ArrayList<>();

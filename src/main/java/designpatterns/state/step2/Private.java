@@ -1,5 +1,8 @@
 package designpatterns.state.step2;
 
+/**
+ * ConcreteState
+ */
 public class Private implements State {
     private OnlineCourse onlineCourse;
 
